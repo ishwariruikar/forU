@@ -1,3 +1,29 @@
+#play-gate {
+  height: 100vh;              /* full screen height */
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  align-items: center;        /* center vertically */
+}
+
+#play-btn {
+  font-size: 28px;            /* BIG text */
+  padding: 20px 40px;         /* BIG button size */
+  border-radius: 50px;        /* rounded button */
+  border: none;
+  cursor: pointer;
+
+  background-color: #ff4d6d;  /* romantic pink */
+  color: white;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+#play-btn:hover {
+  transform: scale(1.1);      /* cute hover effect */
+}
+
+
 /* GENERAL STYLES */
 body {
   margin: 0;
