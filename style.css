@@ -1,126 +1,69 @@
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-  color: #333;
-  text-align: center;
-  overflow-x: hidden;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Sakshi 💗</title>
 
-h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
-}
+  <link rel="stylesheet" href="style.css">
 
-h2 {
-  margin-bottom: 10px;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
-.hero {
-  padding: 80px 20px;
-}
+<!-- ===== MUSIC GATE ===== -->
+<section id="music-gate">
+  <h1>For Sakshi 💗</h1>
+  <button id="playBtn">▶ Press Play for Us</button>
 
-.subtitle {
-  max-width: 500px;
-  margin: 20px auto;
-}
+  <audio id="bg-music" loop>
+    <source src="assets/music/Dekha_Hi_Nahi.mp3" type="audio/mpeg">
+  </audio>
+</section>
 
-button {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 25px;
-  background: #ff5f9e;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-}
+<!-- ===== MAIN CONTENT (HIDDEN INITIALLY) ===== -->
+<main id="content" class="hidden">
 
-button:hover {
-  transform: scale(1.05);
-  background: #ff3f87;
-}
+  <section class="story">
+    <p>
+      November 2021.<br>
+      College.<br>
+      I thought, <b>“Kitna attitude hai.”</b><br><br>
+      Second day, we talked.<br>
+      Then we walked 4 km.<br>
+      Just to keep talking.<br><br>
+      That’s how forever started.
+    </p>
+  </section>
 
-.card {
-  background: rgba(255,255,255,0.85);
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 600px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
+  <!-- ===== PHOTO ALBUM ===== -->
+  <section class="album-section">
+    <h2>Us. In Frames. 📸</h2>
 
-.buttons button {
-  margin: 10px;
-}
+    <div class="album">
+      <img id="albumImage" src="assets/images/photo1.jpg" alt="memory">
+    </div>
 
-.gallery img {
-  width: 150px;
-  margin: 10px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+    <div class="album-controls">
+      <button id="prev">⟵</button>
+      <button id="next">⟶</button>
+    </div>
+  </section>
 
-.gallery img:hover {
-  transform: scale(1.05);
-}
+  <section class="final">
+    <p>
+      You are my coping mechanism.<br>
+      My calm in chaos.<br>
+      My constant.<br><br>
+      Whatever happens,<br>
+      don’t leave my side.
+    </p>
 
-.videos iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  margin: 15px 0;
-  border-radius: 15px;
-}
+    <h1 class="proposal">Shaadi karegi kya? 💍</h1>
+  </section>
 
-.gif {
-  width: 200px;
-  border-radius: 15px;
-  margin-top: 15px;
-}
+</main>
 
-.final {
-  padding: 60px 20px;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 10;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 300px;
-  z-index: 11;
-}
-
-/* Floating hearts animation */
-.hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url('https://i.ibb.co/fn3r6Yk/heart.png');
-  background-size: 50px 50px;
-  background-repeat: repeat;
-  animation: floatHearts 10s linear infinite;
-}
-
-@keyframes floatHearts {
-  0% { background-position: 0 0; }
-  100% { background-position: 1000px -1000px; }
-}
+<script src="script.js"></script>
+</body>
+</html>
