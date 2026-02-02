@@ -1,31 +1,31 @@
-const playBtn = document.getElementById("playBtn");
+const playBtn = document.getElementById("play-btn");
+const gate = document.getElementById("play-gate");
 const music = document.getElementById("bg-music");
-const gate = document.getElementById("music-gate");
-const content = document.getElementById("content");
+const sections = document.querySelectorAll(".hidden");
 
-// ===== PLAY GATE =====
 playBtn.addEventListener("click", () => {
   music.play();
   gate.style.display = "none";
-  content.classList.remove("hidden");
+  sections.forEach(s => s.style.display = "block");
 });
 
-// ===== ALBUM LOGIC =====
-let currentIndex = 1;
-const totalImages = 17;
-const albumImage = document.getElementById("albumImage");
+function playMusic() {
+  music.play();
+}
 
-// ⚠️ If your images are NOT .jpg, change extension here
-const EXT = "jpg";
+function openPopup(id) {
+  document.getElementById("popupOverlay").style.display = "block";
+  document.getElementById(id).style.display = "block";
+}
 
-document.getElementById("next").onclick = () => {
-  currentIndex++;
-  if (currentIndex > totalImages) currentIndex = 1;
-  albumImage.src = `assets/images/photo${currentIndex}.${EXT}`;
-};
+function closePopup() {
+  document.getElementById("popupOverlay").style.display = "none";
+  document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
+}
 
-document.getElementById("prev").onclick = () => {
-  currentIndex--;
-  if (currentIndex < 1) currentIndex = totalImages;
-  albumImage.src = `assets/images/photo${currentIndex}.${EXT}`;
-};
+// ALBUM ROTATION
+let i = 1;
+setInterval(() => {
+  i = i % 17 + 1;
+  document.getElementById("album-img").src = `assets/images/photo${i}.jpg`;
+}, 4000);
