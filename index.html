@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Sakshi 💗</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating hearts -->
+  <div class="hearts"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi Sakshi 💕</h1>
+    <p class="subtitle">
+      This is a small, chaotic, emotional corner of the internet  
+      made just for you.
+    </p>
+    <button onclick="openPopup('welcomePopup')">Tap me 🎮</button>
+    <br><br>
+    <button onclick="playMusic()">🎧 Play Our Song</button>
+    <audio id="bg-music" loop>
+      <source src="assets/music/song.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- STORY -->
+  <section class="card">
+    <h2>How it all started 🌸</h2>
+    <p>
+      November 2021. College.<br>
+      First thought: <b>“Bhai, kitna attitude hai.”</b><br><br>
+      Second day, we talked.<br>
+      Then we walked.<br>
+      3–4 kilometers.<br>
+      Just to keep talking.<br><br>
+      I think that’s when fate said:<br>
+      <i>“Yep. Best friends.”</i>
+    </p>
+  </section>
+
+  <!-- CHAOS + CALM -->
+  <section class="card">
+    <h2>You & Me 🌈</h2>
+    <p>
+      You are chaos. Colors. Noise. Life.<br>
+      You talk to everyone.<br>
+      You light up rooms without trying.<br><br>
+      I was quiet. Shy. Calm.<br>
+      Then you came and said:<br>
+      <b>“Talk more. Have fun.”</b><br><br>
+      And somehow… I did.
+    </p>
+  </section>
+
+  <!-- OPEN WHEN -->
+  <section class="card">
+    <h2>Open When 💌</h2>
+    <div class="buttons">
+      <button onclick="openPopup('missPopup')">You miss me 🫂</button>
+      <button onclick="openPopup('sadPopup')">You’re sad 🥺</button>
+      <button onclick="openPopup('laughPopup')">You need a laugh 😂</button>
+      <button onclick="openPopup('lovePopup')">You forget your place 💗</button>
+    </div>
+  </section>
+
+  <!-- MEMORY GALLERY -->
+  <section class="card">
+    <h2>Memory Lane 📸</h2>
+    <div class="gallery">
+      <img src="assets/images/mumbai1.jpg" alt="Marine Drive 1">
+      <img src="assets/images/mumbai2.jpg" alt="Marine Drive 2">
+      <img src="assets/images/trip1.jpg" alt="Trip Memory 1">
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section class="card">
+    <h2>Our Videos 🎥</h2>
+    <div class="videos">
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID1" 
+        allowfullscreen></iframe>
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID2" 
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- SPOTIFY PLAYLIST -->
+  <section class="card">
+    <h2>Our Playlist 🎶</h2>
+    <p>These songs remind me of you 💗</p>
+    <iframe 
+      src="https://open.spotify.com/embed/playlist/PLAYLIST_ID" 
+      width="100%" height="380" allow="encrypted-media"></iframe>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final">
+    <p>
+      You are my coping mechanism.<br>
+      My safe place.<br>
+      My constant.<br><br>
+      Whatever future brings,<br>
+      I just hope one thing never changes:<br><br>
+      <b>Us.</b>
+    </p>
+
+    <button onclick="openPopup('finalPopup')">One last thing 💍</button>
+  </section>
+
+  <!-- POPUPS -->
+  <div id="popupOverlay" class="overlay" onclick="closePopup()"></div>
+
+  <div class="popup" id="welcomePopup">
+    <p>
+      Hi.  
+      Yes, this website is for you.  
+      No, you cannot escape. 💕
+    </p>
+    <button onclick="closePopup()">Okay 🥹</button>
+  </div>
+
+  <div class="popup" id="missPopup">
+    <p>
+      If you’re here,  
+      it means you miss me.  
+      I miss you too.  
+      Always.
+    </p>
+    <button onclick="closePopup()">Hug 🤍</button>
+  </div>
+
+  <div class="popup" id="sadPopup">
+    <p>
+      It’s okay to feel sad.  
+      Cry if you need to.  
+      I’m still right here.
+    </p>
+    <button onclick="closePopup()">Stay 🫶</button>
+  </div>
+
+  <div class="popup" id="laughPopup">
+    <p>
+      Remember when I got drunk  
+      and you handled me like a pro?  
+      Yeah.  
+      You’re the hero. 😂
+    </p>
+    <button onclick="closePopup()">LOL 🤣</button>
+  </div>
+
+  <div class="popup" id="lovePopup">
+    <p>
+      You are fixed in my life.  
+      No replacement.  
+      No backup.  
+      Just you. 💗
+    </p>
+    <button onclick="closePopup()">Okay 😭</button>
+  </div>
+
+  <div class="popup" id="finalPopup">
+    <p>
+      I love you.  
+      Always.<br><br>
+      और हाँ…  
+      <b>शादी करोगी क्या मुझसे?</b><br>
+      (Mostly joking 😌)
+    </p>
+    <button onclick="closePopup()">Always 🥹</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
