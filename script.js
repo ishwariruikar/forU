@@ -22,26 +22,26 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 // MEMORY ALBUM
+// MEMORY ALBUM (safe)
 const albumImages = [];
-for(let i=1;i<=17;i++){
+for (let i = 1; i <= 17; i++) {
   albumImages.push(`assets/images/photo${i}.jpeg`);
 }
 
 let index = 0;
 const albumImg = document.getElementById("album-img");
 
-document.getElementById("next-btn").addEventListener("click",()=>{
-  index = (index+1)%albumImages.length;
-  albumImg.src = albumImages[index];
-});
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
 
-document.getElementById("prev-btn").addEventListener("click",()=>{
-  index = (index-1+albumImages.length)%albumImages.length;
-  albumImg.src = albumImages[index];
-});
+if (nextBtn && prevBtn && albumImg) {
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % albumImages.length;
+    albumImg.src = albumImages[index];
+  });
 
-// Optional: auto-rotate every 4 seconds
-setInterval(()=>{
-  index = (index+1)%albumImages.length;
-  albumImg.src = albumImages[index];
-}, 4000);
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + albumImages.length) % albumImages.length;
+    albumImg.src = albumImages[index];
+  });
+}
