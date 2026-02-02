@@ -21,28 +21,27 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
   }
 
-  // MEMORY ALBUM
-  const albumImages = [];
-  for(let i=1;i<=17;i++){
-    albumImages.push(`assets/images/photo${i}.jpeg`);
-  }
-  let index = 0;
-  const albumImg = document.getElementById("album-img");
-  document.getElementById("next-btn").addEventListener("click",()=>{
-    index = (index+1)%albumImages.length;
-    albumImg.src = albumImages[index];
-  });
-  document.getElementById("prev-btn").addEventListener("click",()=>{
-    index = (index-1+albumImages.length)%albumImages.length;
-    albumImg.src = albumImages[index];
-  });
+// MEMORY ALBUM
+const albumImages = [];
+for(let i=1;i<=17;i++){
+  albumImages.push(`assets/images/photo${i}.jpeg`);
+}
 
-  // Floating hearts animation
-  for(let i=0;i<15;i++){
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.style.left = Math.random()*100 + "vw";
-    heart.style.animationDuration = 3 + Math.random()*2 + "s";
-    document.querySelector(".hearts").appendChild(heart);
-  }
+let index = 0;
+const albumImg = document.getElementById("album-img");
+
+document.getElementById("next-btn").addEventListener("click",()=>{
+  index = (index+1)%albumImages.length;
+  albumImg.src = albumImages[index];
 });
+
+document.getElementById("prev-btn").addEventListener("click",()=>{
+  index = (index-1+albumImages.length)%albumImages.length;
+  albumImg.src = albumImages[index];
+});
+
+// Optional: auto-rotate every 4 seconds
+setInterval(()=>{
+  index = (index+1)%albumImages.length;
+  albumImg.src = albumImages[index];
+}, 4000);
