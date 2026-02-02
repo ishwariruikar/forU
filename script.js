@@ -4,39 +4,45 @@ document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll(".hero, .card, .final");
   const bgMusic = document.getElementById("bg-music");
 
+  // Press Play for Us
   playBtn.addEventListener("click", function() {
-    // Hide play gate
     playGate.style.display = "none";
-
-    // Reveal all sections
     sections.forEach(sec => sec.classList.remove("hidden"));
-
-    // Play music
-    bgMusic.play().catch(err => {
-      console.log("Autoplay blocked, please click play button");
-    });
+    bgMusic.play().catch(err => console.log("Click required for autoplay"));
   });
+
+  // POPUPS
+  window.openPopup = function(id){
+    document.getElementById("popupOverlay").style.display = "block";
+    document.getElementById(id).style.display = "block";
+  }
+  window.closePopup = function(){
+    document.getElementById("popupOverlay").style.display = "none";
+    document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
+  }
+
+  // MEMORY ALBUM
+  const albumImages = [];
+  for(let i=1;i<=17;i++){
+    albumImages.push(`assets/images/photo${i}.jpeg`);
+  }
+  let index = 0;
+  const albumImg = document.getElementById("album-img");
+  document.getElementById("next-btn").addEventListener("click",()=>{
+    index = (index+1)%albumImages.length;
+    albumImg.src = albumImages[index];
+  });
+  document.getElementById("prev-btn").addEventListener("click",()=>{
+    index = (index-1+albumImages.length)%albumImages.length;
+    albumImg.src = albumImages[index];
+  });
+
+  // Floating hearts animation
+  for(let i=0;i<15;i++){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration = 3 + Math.random()*2 + "s";
+    document.querySelector(".hearts").appendChild(heart);
+  }
 });
-
-// Play music button
-function playMusic() {
-  const music = document.getElementById("bg-music");
-  music.play();
-}
-
-// Popups
-function openPopup(id) {
-  document.getElementById("popupOverlay").style.display = "block";
-  document.getElementById(id).style.display = "block";
-}
-function closePopup() {
-  document.getElementById("popupOverlay").style.display = "none";
-  document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
-}
-
-// MEMORY ALBUM ROTATION
-let i = 1;
-setInterval(() => {
-  i = i % 17 + 1;
-  document.getElementById("album-img").src = `assets/images/Photo${i}.jpeg`;
-}, 4000);
