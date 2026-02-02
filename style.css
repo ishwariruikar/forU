@@ -1,149 +1,85 @@
 /* GENERAL STYLES */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(120deg, #ff9ac2, #ffc0cb, #ffe6f0);
+  background: linear-gradient(135deg, #ffccd5, #ffe6f0);
   overflow-x: hidden;
-  color: #fff;
 }
 
-/* PLAY GATE */
-#play-gate {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(120deg, #ff5ea2, #ff85c1);
+h1 { 
+  font-family: 'Pacifico', cursive; 
+  color: #ff5ea2; 
+  text-shadow: 2px 2px 8px #ffc0cb; 
+  text-align: center;
 }
 
-#play-btn {
-  font-family: 'Pacifico', cursive;
-  font-size: 2rem;
-  padding: 20px 40px;
-  border-radius: 30px;
-  border: none;
+.subtitle { 
+  color: #fff0f5; 
+  font-size: 1rem; 
+  text-align: center;
+}
+
+button {
   cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(45deg,#ff6fcf,#ff99e3);
   color: #fff;
-  background: #ff9ac2;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  transition: transform 0.2s, background 0.2s;
-}
-#play-btn:hover {
-  transform: scale(1.1);
-  background: #ff5ea2;
+  font-weight: 600;
+  box-shadow: 2px 2px 8px #ffa6e0;
 }
 
 /* HIDDEN SECTIONS */
 .hidden { display: none; }
 
 /* HERO */
-.hero h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 3rem;
-  color: #ff5ea2;
-  text-shadow: 2px 2px 10px #ffc0cb;
-  text-align: center;
-  margin-top: 30px;
-}
+.hero { text-align: center; padding: 2rem 1rem; }
 
-.subtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: #fff0f5;
-  margin-bottom: 20px;
-}
-
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.1);
-  margin: 30px auto;
-  padding: 20px;
-  max-width: 700px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-/* BUTTONS */
-.buttons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-button {
-  padding: 10px 18px;
-  border-radius: 12px;
-  background: #ff9ac2;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s, background 0.2s;
-}
-button:hover { transform: scale(1.1); background: #ff5ea2; }
-
-/* MEMORY ALBUM */
-.album {
-  position: relative;
-  width: 400px;
-  height: 300px;
-  margin: 20px auto;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-}
-.album img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 1s ease-in-out;
-}
-
-/* STICKERS */
-.stickers .sticker {
-  position: absolute;
-  width: 50px;
-  top: 10%;
-  left: 20%;
-  animation: float 5s infinite;
-}
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+/* CARD */
+.card { 
+  background: rgba(255,255,255,0.9);
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 2px 2px 12px #ffb6c1;
 }
 
 /* FINAL SECTION */
-.final {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 40px;
-  color: #fff;
+.final-text .highlight { 
+  color: #ff69b4; 
+  font-weight: bold; 
+  font-size: 1.2rem;
 }
 
+/* ALBUM */
+.album { text-align: center; position: relative; }
+.album img { width: 100%; max-width: 350px; border-radius: 15px; box-shadow: 2px 2px 15px #ffb6c1; }
+.album-controls { margin-top: 10px; }
+.album-controls button { background: #ff77aa; }
+
 /* POPUPS */
-.overlay {
+.overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5); z-index: 100; }
+.popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #fff; padding: 1rem; border-radius: 15px; max-width: 300px; text-align: center; z-index: 101; box-shadow: 2px 2px 15px #ff99d1; }
+
+/* FLOATING HEARTS & STICKERS */
+.hearts, .stickers {
   position: fixed;
-  display: none;
-  top:0; left:0;
+  top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 100;
+  pointer-events: none;
+  z-index: 0;
 }
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  background: #ffb6c1;
-  padding: 25px 40px;
-  border-radius: 20px;
-  z-index: 101;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 500px){
+  h1 { font-size: 2rem; }
+  .subtitle { font-size: 0.9rem; }
+  button { font-size: 0.9rem; padding: 8px 15px; }
+  .card { width: 95%; }
+  .album img { max-width: 90%; }
 }
-.popup button { margin-top: 15px; }
