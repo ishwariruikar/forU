@@ -254,6 +254,47 @@
     <button onclick="closePopup()">Okay 😭</button>
   </div>
 
+  <!-- ================= QUIZ + SPOTIFY REWARD ================= -->
+<section id="quiz-section">
+
+  <h2 class="quiz-title">One last thing before you go 😌</h2>
+  <p class="quiz-sub">Answer these honestly 💙</p>
+
+  <div id="quiz-box">
+    <h3 id="question">Status check 😌</h3>
+
+    <div id="options"></div>
+
+    <p id="result-text"></p>
+  </div>
+
+  <!-- Final Typewriter Message -->
+  <p id="final-message"></p>
+
+  <!-- Spotify Reward (Hidden) -->
+  <div id="spotify-reward" class="hidden">
+    <h2 class="reward-title">🎧 Your Gift</h2>
+
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/3XkHMLUevPy043so78HIUO?theme=0"
+      width="100%"
+      height="380"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<!-- Quiz Script -->
+<script src="quiz.js"></script>
+
+
   <div class="popup" id="finalPopup">
     <p>
       I love you. Always.<br><br>
