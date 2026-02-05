@@ -1,25 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
+// document.addEventListener("DOMContentLoaded", function () {
 
   const playBtn = document.getElementById("play-btn");
   const playGate = document.getElementById("play-gate");
-  const sections = document.querySelectorAll(".hero, .card, .final");
   const bgMusic = document.getElementById("bg-music");
+  const quizSection = document.getElementById("quiz-section");
 
-  // Press Play for Us
-  playBtn.addEventListener("click", function() {
-    playGate.style.display = "none";
-    sections.forEach(sec => sec.classList.remove("hidden"));
+  // Safety check (prevents crashes)
+  if (!playBtn) {
+    console.log("Play button not found");
+    return;
+  }
 
-    // 🎵 play music
-    bgMusic.play().catch(err => console.log("Click required for autoplay"));
+  playBtn.addEventListener("click", function () {
+    console.log("Play button clicked");
 
-    // 💗 SHOW QUIZ AFTER PLAY BUTTON
-    document.getElementById("quiz-section").style.display = "block";
+    // Hide gate
+    if (playGate) playGate.style.display = "none";
+
+    // Show all hidden sections
+    document.querySelectorAll(".hidden").forEach(el => {
+      el.classList.remove("hidden");
+    });
+
+    // Show quiz AFTER entering site
+    if (quizSection) quizSection.style.display = "block";
+
+    // Play music safely
+    if (bgMusic) {
+      bgMusic.play().catch(() => {});
+    }
   });
 
 });
-
-
   // POPUPS
   window.openPopup = function(id){
     document.getElementById("popupOverlay").style.display = "block";
