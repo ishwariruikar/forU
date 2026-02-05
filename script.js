@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+
   const playBtn = document.getElementById("play-btn");
   const playGate = document.getElementById("play-gate");
   const sections = document.querySelectorAll(".hero, .card, .final");
@@ -8,11 +9,16 @@ document.addEventListener("DOMContentLoaded", function() {
   playBtn.addEventListener("click", function() {
     playGate.style.display = "none";
     sections.forEach(sec => sec.classList.remove("hidden"));
+
+    // 🎵 play music
     bgMusic.play().catch(err => console.log("Click required for autoplay"));
-  });
-      // SHOW QUIZ AFTER PLAY BUTTON 💗
+
+    // 💗 SHOW QUIZ AFTER PLAY BUTTON
     document.getElementById("quiz-section").style.display = "block";
+  });
+
 });
+
 
   // POPUPS
   window.openPopup = function(id){
