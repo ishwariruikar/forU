@@ -1,37 +1,30 @@
-// document.addEventListener("DOMContentLoaded", function () {
+// 💗 MASTER PLAY BUTTON (controls entire site)
+const playBtn = document.getElementById("play-btn");
+const playGate = document.getElementById("play-gate");
+const bgMusic = document.getElementById("bg-music");
+const quizSection = document.getElementById("quiz-section");
 
-  const playBtn = document.getElementById("play-btn");
-  const playGate = document.getElementById("play-gate");
-  const bgMusic = document.getElementById("bg-music");
-  const quizSection = document.getElementById("quiz-section");
+playBtn.addEventListener("click", () => {
 
-  // Safety check (prevents crashes)
-  if (!playBtn) {
-    console.log("Play button not found");
-    return;
-  }
+  // hide play gate
+  playGate.style.display = "none";
 
-  playBtn.addEventListener("click", function () {
-    console.log("Play button clicked");
-
-    // Hide gate
-    if (playGate) playGate.style.display = "none";
-
-    // Show all hidden sections
-    document.querySelectorAll(".hidden").forEach(el => {
-      el.classList.remove("hidden");
-    });
-
-    // Show quiz AFTER entering site
-    if (quizSection) quizSection.style.display = "block";
-
-    // Play music safely
-    if (bgMusic) {
-      bgMusic.play().catch(() => {});
-    }
+  // show entire website
+  document.querySelectorAll(".hidden").forEach(el => {
+    el.classList.remove("hidden");
   });
 
+  // 🎧 play music safely
+  if (bgMusic) {
+    bgMusic.play().catch(() => {});
+  }
+
+  // 🧠 show quiz
+  if (quizSection) {
+    quizSection.style.display = "block";
+  }
 });
+
   // POPUPS
   window.openPopup = function(id){
     document.getElementById("popupOverlay").style.display = "block";
