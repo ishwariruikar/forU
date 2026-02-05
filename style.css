@@ -3,9 +3,13 @@
   display: flex;
   justify-content: center;    /* center horizontally */
   align-items: center;        /* center vertically */
+  position: relative;
+  z-index: 9999;   /* 
 }
 
 #play-btn {
+  position: relative;
+  z-index: 10000;
   font-size: 28px;            /* BIG text */
   padding: 20px 40px;         /* BIG button size */
   border-radius: 50px;        /* rounded button */
