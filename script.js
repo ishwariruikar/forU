@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
     sections.forEach(sec => sec.classList.remove("hidden"));
     bgMusic.play().catch(err => console.log("Click required for autoplay"));
   });
+      // SHOW QUIZ AFTER PLAY BUTTON 💗
+    document.getElementById("quiz-section").style.display = "block";
+});
 
   // POPUPS
   window.openPopup = function(id){
