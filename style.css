@@ -239,12 +239,7 @@ button {
   z-index: 3;
 }
 
-/* ===== SCATTERED POSITIONS ===== */
-/* TOP ROW */
-.img1 { top:20px; left:40px; transform:rotate(-12deg); }
-.img2 { top:10px; left:230px; transform:rotate(8deg); }
-.img3 { top:30px; right:230px; transform:rotate(-6deg); }
-.img4 { top:20px; right:40px; transform:rotate(10deg); }
+
 
 /* UPPER MID */
 .img5 { top:180px; left:0px; transform:rotate(14deg); }
@@ -266,3 +261,28 @@ button {
 .img15 { bottom:20px; left:60px; transform:rotate(-8deg); }
 .img16 { bottom:10px; left:260px; transform:rotate(12deg); }
 .img17 { bottom:20px; right:80px; transform:rotate(-6deg); }
+
+/* ===== MEMORY PHOTO POSITIONS (CORRECT) ===== */
+
+.p1  { top:20px; left:40px; transform:rotate(-12deg); }
+.p2  { top:10px; left:230px; transform:rotate(8deg); }
+.p3  { top:30px; right:230px; transform:rotate(-6deg); }
+.p4  { top:20px; right:40px; transform:rotate(10deg); }
+
+.p5  { top:180px; left:0px; transform:rotate(14deg); }
+.p6  { top:160px; left:180px; transform:rotate(-10deg); }
+.p7  { top:170px; right:180px; transform:rotate(12deg); }
+.p8  { top:180px; right:0px; transform:rotate(-14deg); }
+
+.p9  { top:320px; left:20px; transform:rotate(-8deg); }
+.p10 { top:330px; right:20px; transform:rotate(9deg); }
+
+.p11 { bottom:180px; left:0px; transform:rotate(12deg); }
+.p12 { bottom:160px; left:200px; transform:rotate(-12deg); }
+.p13 { bottom:170px; right:200px; transform:rotate(8deg); }
+.p14 { bottom:180px; right:0px; transform:rotate(-10deg); }
+
+.p15 { bottom:20px; left:60px; transform:rotate(-8deg); }
+.p16 { bottom:10px; left:260px; transform:rotate(12deg); }
+.p17 { bottom:20px; right:80px; transform:rotate(-6deg); }
+
