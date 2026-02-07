@@ -25,23 +25,6 @@ window.closePopup = function(){
   document.querySelectorAll(".popup").forEach(p => p.style.display = "none");
 }
 
-// MEMORY ALBUM
-const albumImages = [];
-for(let i=1;i<=17;i++){
-  albumImages.push(`assets/images/photo${i}.jpeg`);
-}
-let index = 0;
-const albumImg = document.getElementById("album-img");
-
-document.getElementById("next-btn").addEventListener("click",()=>{
-  index = (index+1)%albumImages.length;
-  albumImg.src = albumImages[index];
-});
-document.getElementById("prev-btn").addEventListener("click",()=>{
-  index = (index-1+albumImages.length)%albumImages.length;
-  albumImg.src = albumImages[index];
-});
-
 // Floating hearts
 for(let i=0;i<15;i++){
   const heart = document.createElement("div");
