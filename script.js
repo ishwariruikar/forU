@@ -33,8 +33,4 @@ for(let i=0;i<15;i++){
   heart.style.animationDuration = 3 + Math.random()*2 + "s";
   document.querySelector(".hearts").appendChild(heart);
 }
-<section class="memories">
-    <h2>Our Memories 📸</h2>
-    <img src="assets/images/collage.jpeg" class="memory-collage">
-</section>
 
