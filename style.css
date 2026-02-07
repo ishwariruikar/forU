@@ -197,64 +197,34 @@ button {
   z-index: 3;
 }
 
-/* ===== MEMORY WALL GRID ===== */
+/* ===== COLLAGE STYLE ===== */
 
-.memory-title{
-  text-align:center;
-  font-size:42px;
-  margin-bottom:30px;
+.collage-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:30px 10px;
 }
 
-.memory-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap:18px;
-  padding:10px;
-}
-
-/* photos */
-.memory-grid img{
+.collage-container img{
   width:100%;
-  height:180px;
-  object-fit:cover;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  transition:0.4s;
-   opacity:0;
-  transform: translateY(40px) scale(0.9);
-  animation: fadeInUp 1s forwards;
+  max-width:800px;
+  border-radius:25px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+  opacity:0;
+  transform:scale(0.8);
+  animation: collagePop 1.2s ease forwards;
 }
-
-/* stagger animation */
-.memory-grid img:nth-child(1){ animation-delay:0.1s }
-.memory-grid img:nth-child(2){ animation-delay:0.2s }
-.memory-grid img:nth-child(3){ animation-delay:0.3s }
-.memory-grid img:nth-child(4){ animation-delay:0.4s }
-.memory-grid img:nth-child(5){ animation-delay:0.5s }
-.memory-grid img:nth-child(6){ animation-delay:0.6s }
-.memory-grid img:nth-child(7){ animation-delay:0.7s }
-.memory-grid img:nth-child(8){ animation-delay:0.8s }
-.memory-grid img:nth-child(9){ animation-delay:0.9s }
-.memory-grid img:nth-child(10){ animation-delay:1s }
-.memory-grid img:nth-child(11){ animation-delay:1.1s }
-.memory-grid img:nth-child(12){ animation-delay:1.2s }
-.memory-grid img:nth-child(13){ animation-delay:1.3s }
-.memory-grid img:nth-child(14){ animation-delay:1.4s }
-.memory-grid img:nth-child(15){ animation-delay:1.5s }
-.memory-grid img:nth-child(16){ animation-delay:1.6s }
-.memory-grid img:nth-child(17){ animation-delay:1.7s }
-
 
 /* cute hover */
-.memory-grid img:hover{
-  transform:scale(1.08);rotate(2deg);
-  box-shadow:0 20px 35px rgba(0,0,0,0.35);
+.collage-container img:hover{
+  transform:scale(1.05);
 }
 
-/* animation keyframe */
-@keyframes fadeInUp{
+/* entrance animation */
+@keyframes collagePop{
   to{
     opacity:1;
-    transform: translateY(0) scale(1);
+    transform:scale(1);
   }
 }
