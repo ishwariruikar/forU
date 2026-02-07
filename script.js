@@ -35,6 +35,6 @@ for(let i=0;i<15;i++){
 }
 <section class="memories">
     <h2>Our Memories 📸</h2>
-    <img src="assets/images/collage.jpg" class="memory-collage">
+    <img src="assets/images/collage.jpeg" class="memory-collage">
 </section>
 
